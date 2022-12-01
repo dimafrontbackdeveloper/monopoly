@@ -1,0 +1,163 @@
+@import './variables';
+
+// миксины
+@import './_mixins.scss';
+
+// обнуление стилей
+@import './reset.scss';
+
+// контейнер
+@import './container.scss';
+
+// оболочка
+@import './wrapper.scss';
+
+// контент
+@import './content.scss';
+
+// шрифты
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+// глобальные стили
+@import './global.scss';
+
+.registration {
+   @include adaptiv-value('padding-left',40,55,0);
+   @include adaptiv-value('padding-right',40,55,0);
+
+   // .registration__row
+
+   &__row {
+      height: 100vh;
+      display: grid;
+      grid-template-rows: 1fr auto ;
+   }
+
+   // .registration__content
+
+   &__content {
+      padding-top: 20px;
+      padding-bottom: 20px;
+
+      .button{
+         display: block;
+         @include adaptiv-value('margin-bottom',75,30,0);
+         width: 320px;
+         height: 55px;
+         background: url('./../images/ConnectWallet_NORMAL.png');
+         background-repeat: no-repeat;
+         background-size:cover !important;
+         transition: 0.2s;
+         border: none !important;
+         outline: none !important;
+
+         &:hover{
+            background: url('./../images/ConnectWallet_HOVERED.png');
+         }
+
+         @include breakpoint(425px){
+            width: 210px;
+            height: 36px;
+         }
+      }
+
+      p{
+         font-size: 32px;
+
+         @include breakpoint(425px){
+            font-size: 18px;
+         }
+
+         &::before{
+            content:'';
+            display:block;
+            width: 15px;
+            height: 15px;
+            border-radius: 15px;
+            background: #3BED4C;
+            margin-right: 15px;
+
+            @include breakpoint(425px){
+               margin-right: 5px;
+               width: 10px;
+               height: 10px;
+            }
+         }
+
+         b{
+            font-weight: bold;
+         }
+      }
+   }
+
+   // .registration__contentImg
+
+   &__contentImg {
+      @include adaptiv-value('margin-bottom',120,50,0);
+
+      @include breakpoint(425px){
+         width: 120px;
+      }
+
+   }
+
+   // .registration__bottom
+
+   &__bottom {
+      padding-bottom: 40px;
+
+      @include breakpoint(768px){
+         flex-direction: column;
+      }
+
+      p{
+         margin-right: 10px;
+
+         &:last-child{
+            margin-right: 0px;
+         }
+
+         &:nth-child(1){
+            @include breakpoint(768px){
+               order: 3;
+            }
+         }
+
+         &:nth-child(2){
+            @include breakpoint(768px){
+               order: 2;
+                  margin-bottom: 20px;
+            }
+         }
+
+         &:nth-child(3){
+            @include breakpoint(768px){
+               order: 1;
+               margin-bottom: 30px;
+            }
+         }
+
+         ul{
+            
+
+
+            li{
+               margin-right:25px ;
+               
+               img{
+                  width: 30px;
+
+                  @include breakpoint(768px){
+                     width: 40px;
+                  }
+               }
+
+               &:last-child{
+                  margin-right:0px;
+               }
+            }
+         }
+      }
+   }
+}
+
