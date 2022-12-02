@@ -161,3 +161,297 @@
    }
 }
 
+.navbar {
+   background: url('./../images/Background_Left_Menu.png');
+   background-size: cover;
+   background-repeat: no-repeat;
+
+   // .navbar__row
+
+   &__row {
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      padding-left: 20px;
+      padding-right: 20px;
+   }
+
+   // .navbar__logo
+
+   &__logo {
+      padding-top: 20px;
+      margin-bottom: 50px;
+   }
+
+   // .navbar__nav
+
+   &__nav {
+      margin-bottom: 50px;
+
+      ul{
+         li{
+            margin-bottom: 30px;
+
+            &:last-child{
+               margin-bottom: 0px;
+            }
+
+    
+         }
+      }
+   }
+
+   // .navbar__link
+
+   &__link{
+      display: inline-block;
+      background: url('./../images/Home-Normal.png');
+      background-repeat: no-repeat ;
+      background-size: cover ;
+      width: 45px;
+      height: 61px;
+      transition: 0.2s;
+
+      &:hover{
+      background: url('./../images/Home-Hovered.png');
+      background-repeat: no-repeat ;
+      background-size: cover ;
+      }
+
+      &--active{
+         background: url('./../images/Home-Active.png');
+         background-repeat: no-repeat ;
+         background-size: cover ;
+      }
+   }
+
+   // .navbar__soc
+
+   &__soc {
+      padding-bottom: 40px;
+
+      li{
+         margin-bottom: 15px;
+
+         &:last-child{
+            margin-bottom: 0px;
+         }
+      }
+
+     a{
+      display: inline-block;
+      background: url('./../images/IG-normal.png');
+      background-repeat: no-repeat;
+      background-size: cover ;
+      width: 30px;
+      height: 30px;
+      transition: 0.2s;
+
+      &:hover{
+         background: url('./../images/IG-hovered.png');
+         background-repeat: no-repeat;
+         background-size: cover ;
+      }
+
+  
+     }
+   }
+}
+
+.header {
+   padding-top: 60px;
+   padding-left: 40px;
+   padding-right: 40px;
+   margin-bottom: 100px;
+
+   // .header__row
+
+   &__row {
+      p{
+         font-size: 22px;
+      }
+
+    
+   }
+
+   // .header__left
+
+   &__left {
+      p{
+         margin-right: 40px;
+      }
+
+      a{
+         color:#Fff;
+         transition: 0.2s;
+
+         &:hover{
+            color:#4774F9 ;
+            text-decoration: underline;
+            transition: 0.2s;
+         }
+      }
+   }
+
+   // .header__right
+
+   &__right {
+      p{
+         margin-right: 50px;
+
+         &:first-child{
+            button{
+               background: url('./../images/ETH-DepositButton-.png');
+               background-repeat: no-repeat;
+               background-size: cover;
+                  padding-top: 15px;
+                  padding-right: 30px;
+                  padding-bottom: 15px;
+                  padding-left: 80px;
+               color:#000;
+               font-weight: bold;
+               font-size: 22px;
+               transition: 0.2s;
+               cursor: pointer;
+   
+               &:hover{
+               background: url('./../images/ETH-DepositButton-Hovered.png');
+               background-repeat: no-repeat;
+               background-size: cover;
+               }
+            }
+
+         }
+
+         &:nth-of-type(2),&:nth-of-type(3){
+            color:#858997;
+
+            display: flex;
+            align-items: center;
+
+            a{
+               color:inherit;
+               transition:color 0.2s;
+
+               &:hover{
+                  color:#fff;
+
+                  &::before{
+                     color:#fff;
+                     border: 1px solid #fff;
+                  }
+               }
+            }
+         }
+
+         &:nth-of-type(2){
+            a{
+               &::before{
+                  content: '+';
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  width: 25px;
+                  height: 25px;
+                  margin-right: 10px;
+                  border: 1px solid #858997;
+                  border-radius:20px ;
+               }
+            }
+ 
+         }
+
+         &:nth-of-type(3){
+            a{
+            &::before{
+               content: '-';
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               width: 25px;
+               height: 25px;
+               margin-right: 10px;
+               border: 1px solid #858997;
+               border-radius:20px ;
+            }
+         }
+
+         }
+
+         &:nth-child(4){
+
+            span{
+               margin-right: 20px;
+               color: #fff;
+
+               &:last-child{
+                  display: inline-block;
+                  width: 50px;
+                  height: 50px;
+                  border: 2px solid #fff;
+                  border-radius: 30px;
+                  background: #4774FF;
+                  margin-right: 0px;
+               }
+            }
+         }
+      }
+   }
+}
+
+.main{
+   // .main__row
+
+   &__row{
+      grid-template-columns: 150px 1fr;
+   }
+}
+
+.home {
+  
+
+   // .home__row
+
+   &__row {
+      grid-template-columns: repeat(3,1fr);
+      padding-left: 40px;
+      padding-right: 40px;
+   }
+
+   // .home__column
+
+   &__column {
+      figure{
+         position: relative;
+
+         p{
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            font-size:48px;
+            font-weight: bold;
+         }
+
+         button{
+            position: absolute;
+            bottom: 50px;
+            left:20px;
+            background: url('./../images/Play-Normal.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 200px;
+            height: 75px;
+            border: none !important ;
+            outline: none !important ;
+            transition: 0.2s;
+
+            &:hover{
+            background: url('./../images/Play-Hovered.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            }
+         }
+      }
+   }
+}
+

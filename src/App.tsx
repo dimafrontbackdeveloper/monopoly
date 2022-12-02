@@ -1,14 +1,23 @@
 import { useEffect } from 'react';
+import { createBrowserRouter, RouterProvider, Route, Link } from 'react-router-dom';
 import './App.css';
-import { useAppDispatch, useAppSelector } from './hooks/hooks';
+import Main from './pages/Main';
 import Register from './pages/Register';
-import { userSlice } from './store/reducers/UserReducer';
-import { fetchUsers } from './store/reducers/UserReducer/ActionCreators';
 
 function App() {
+  const router = createBrowserRouter([
+    {
+      path: '/registration',
+      element: <Register />,
+    },
+    {
+      path: '/',
+      element: <Main />,
+    },
+  ]);
   return (
     <>
-      <Register />
+      <RouterProvider router={router} />
     </>
   );
 }

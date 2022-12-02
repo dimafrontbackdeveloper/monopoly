@@ -14,7 +14,6 @@ const store = setupStore();
 root.render(
   <Provider store={store}>
     <div className="wrapper">
-      <Header />
       <div className="content">
         <App />
       </div>
