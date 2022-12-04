@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import GameBackground from './../assets/images/Game-Background.png';
 
@@ -12,7 +13,9 @@ const Home = () => {
 
             <figcaption>
               <p>PVP Galaxy Run</p>
-              <button className="button"></button>
+              <Link to="/game">
+                <button className="button"></button>
+              </Link>
             </figcaption>
           </figure>
         </div>
