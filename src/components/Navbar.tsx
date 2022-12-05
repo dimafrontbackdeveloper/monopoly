@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <div className="navbar ta-c">
       <div className="navbar__row">
-        <div className="navbar__logo">
+        <div className="navbar__logo logo ">
           <a href="#">
             <img src={logo} alt="logo" />
           </a>
@@ -17,16 +17,16 @@ const Navbar = () => {
         <nav className="navbar__nav d-f fd-c jc-c ai-c">
           <ul>
             <li>
-              <a className="navbar__link navbar__link--active" href="#"></a>
+              <a className="navbar__link " href="#"></a>
             </li>
             <li>
-              <a className="navbar__link navbar__link--active" href="#"></a>
+              <a className="navbar__link " href="#"></a>
             </li>
             <li>
-              <a className="navbar__link navbar__link--active" href="#"></a>
+              <a className="navbar__link " href="#"></a>
             </li>
             <li>
-              <a className="navbar__link navbar__link--active" href="#"></a>
+              <a className="navbar__link " href="#"></a>
             </li>
           </ul>
         </nav>

@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { FC, useEffect, useRef } from 'react';
+import logo from './../assets/images/logo.png';
 
-const Header = () => {
+const Header: FC = () => {
   return (
     <header className="header">
       <div className="header__row d-f ai-c jc-sb">
@@ -12,6 +13,11 @@ const Header = () => {
           </p>
           <p>
             <a href="#">Leaderboard</a>
+          </p>
+          <p className="logo">
+            <a href="#">
+              <img src={logo} alt="logo" />
+            </a>
           </p>
         </div>
         <div className="header__right d-f ai-c">
@@ -33,6 +39,13 @@ const Header = () => {
               <span>Username</span>
               <span></span>
             </a>
+          </p>
+          <p>
+            <div className="burger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
           </p>
         </div>
       </div>

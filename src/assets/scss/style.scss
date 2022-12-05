@@ -62,6 +62,7 @@
       }
 
       p{
+         
          font-size: 32px;
 
          @include breakpoint(425px){
@@ -166,31 +167,37 @@
    background-size: cover;
    background-repeat: no-repeat;
 
+   @include breakpoint(1440px){
+      display: none;
+   }
+
    // .navbar__row
 
    &__row {
       min-height: 100vh;
       display: grid;
       grid-template-rows: auto 1fr auto;
-      padding-left: 20px;
-      padding-right: 20px;
+   @include adaptiv-value('padding-left',20,10,0);
+   @include adaptiv-value('padding-right',20,10,0);
    }
 
    // .navbar__logo
 
    &__logo {
-      padding-top: 20px;
-      margin-bottom: 50px;
+   @include adaptiv-value('padding-top',20,10,0);
+   margin: 0 auto;
+   @include adaptiv-value('margin-bottom',50,25,0);
+      
    }
 
    // .navbar__nav
 
    &__nav {
-      margin-bottom: 50px;
+   @include adaptiv-value('margin-bottom',50,25,0);
 
       ul{
          li{
-            margin-bottom: 30px;
+   @include adaptiv-value('margin-bottom',30,15,0);
 
             &:last-child{
                margin-bottom: 0px;
@@ -208,8 +215,8 @@
       background: url('./../images/Home-Normal.png');
       background-repeat: no-repeat ;
       background-size: cover ;
-      width: 45px;
-      height: 61px;
+   @include adaptiv-value('width',45,23,0);
+   @include adaptiv-value('height',61,30,0);
       transition: 0.2s;
 
       &:hover{
@@ -228,10 +235,10 @@
    // .navbar__soc
 
    &__soc {
-      padding-bottom: 40px;
+   @include adaptiv-value('padding-bottom',40,20,0);
 
       li{
-         margin-bottom: 15px;
+   @include adaptiv-value('margin-bottom',15,10,0);
 
          &:last-child{
             margin-bottom: 0px;
@@ -243,8 +250,8 @@
       background: url('./../images/IG-normal.png');
       background-repeat: no-repeat;
       background-size: cover ;
-      width: 30px;
-      height: 30px;
+   @include adaptiv-value('width',30,20,0);
+   @include adaptiv-value('height',30,20,0);
       transition: 0.2s;
 
       &:hover{
@@ -259,26 +266,41 @@
 }
 
 .header {
-   padding-top: 60px;
-   padding-left: 40px;
-   padding-right: 40px;
-   margin-bottom: 100px;
+   @include adaptiv-value('padding-top',60,30,0);
+   @include adaptiv-value('padding-left',40,10,0);
+   @include adaptiv-value('padding-right',40,10,0);
+
+   @include breakpoint(1440px){
+      border-bottom: 1px solid #4D5260;
+   @include adaptiv-value('padding-bottom',30,20,0);
+   }
+
 
    // .header__row
 
    &__row {
       p{
-         font-size: 22px;
+          @include adaptiv-value('font-size',22,18,0);
       }
-
-    
    }
 
    // .header__left
 
    &__left {
       p{
-         margin-right: 40px;
+         @include adaptiv-value('margin-right',40,20,0);
+         
+         @include breakpoint(1440px){
+            display: none;
+         }
+
+         &:last-child{
+            display: none;
+
+            @include breakpoint(1440px){
+               display: block;
+            }
+         }
       }
 
       a{
@@ -291,28 +313,43 @@
             transition: 0.2s;
          }
       }
+
+   
    }
 
    // .header__right
 
    &__right {
       p{
-         margin-right: 50px;
+         @include adaptiv-value('margin-right',50,15,0);
+
+         &:last-child{
+            display: none;
+         }
+
+         @include breakpoint(1440px){
+            display: none;
+
+            &:first-child,&:last-child{
+               display: block;
+            }
+         }
 
          &:first-child{
             button{
                background: url('./../images/ETH-DepositButton-.png');
                background-repeat: no-repeat;
-               background-size: cover;
-                  padding-top: 15px;
-                  padding-right: 30px;
-                  padding-bottom: 15px;
-                  padding-left: 80px;
-               color:#000;
-               font-weight: bold;
-               font-size: 22px;
-               transition: 0.2s;
-               cursor: pointer;
+               background-size: 100% 100%;
+         @include adaptiv-value('padding-top',15,10,0);
+         @include adaptiv-value('padding-right',30,10,0);
+         @include adaptiv-value('padding-bottom',15,10,0);
+         @include adaptiv-value('padding-left',80,60,0);
+                  color:#000;
+                  font-weight: bold;
+          @include adaptiv-value('font-size',22,14,0);
+                  transition: 0.2s;
+                  cursor: pointer;
+                  border: none;
    
                &:hover{
                background: url('./../images/ETH-DepositButton-Hovered.png');
@@ -328,6 +365,10 @@
 
             display: flex;
             align-items: center;
+
+            @include breakpoint(1440px){
+               display: none;
+            }
 
             a{
                color:inherit;
@@ -351,9 +392,9 @@
                   display: flex;
                   justify-content: center;
                   align-items: center;
-                  width: 25px;
-                  height: 25px;
-                  margin-right: 10px;
+         @include adaptiv-value('width',25,20,0);
+         @include adaptiv-value('height',25,20,0);
+         @include adaptiv-value('margin-right',10,5,0);
                   border: 1px solid #858997;
                   border-radius:20px ;
                }
@@ -368,9 +409,9 @@
                display: flex;
                justify-content: center;
                align-items: center;
-               width: 25px;
-               height: 25px;
-               margin-right: 10px;
+               @include adaptiv-value('width',25,20,0);
+               @include adaptiv-value('height',25,20,0);
+               @include adaptiv-value('margin-right',10,5,0);
                border: 1px solid #858997;
                border-radius:20px ;
             }
@@ -381,13 +422,13 @@
          &:nth-child(4){
 
             span{
-               margin-right: 20px;
+               @include adaptiv-value('margin-right',20,10,0);
                color: #fff;
 
                &:last-child{
                   display: inline-block;
-                  width: 50px;
-                  height: 50px;
+               @include adaptiv-value('width',50,10,0);
+               @include adaptiv-value('height',50,10,0);
                   border: 2px solid #fff;
                   border-radius: 30px;
                   background: #4774FF;
@@ -404,6 +445,10 @@
 
    &__row{
       grid-template-columns: 150px 1fr;
+
+      @include breakpoint(1440px){
+         grid-template-columns:  1fr;
+      }
    }
 }
 
@@ -413,9 +458,9 @@
    // .home__row
 
    &__row {
-      grid-template-columns: repeat(3,1fr);
-      padding-left: 40px;
-      padding-right: 40px;
+      position: relative;
+      height: 100vh;
+      grid-template-rows: auto 1fr auto;
    }
 
    // .home__column
@@ -428,7 +473,7 @@
             position: absolute;
             top: 30px;
             left: 30px;
-            font-size:48px;
+            font-size: 48px;
             font-weight: bold;
          }
 
@@ -453,5 +498,43 @@
          }
       }
    }
+   
+   .title{
+      @include adaptiv-value('margin-top',50,25,0);
+      @include adaptiv-value('margin-bottom',50,25,0);
+   }
+
+      .soc {
+         display: none;
+      border-top: 1px solid #4D5260;
+
+      @include adaptiv-value('padding-top',30,20,0);
+      @include adaptiv-value('padding-right',30,20,0);
+      @include adaptiv-value('padding-bottom',40,20,0);
+      @include adaptiv-value('left-right',30,20,0);
+         // display: none;
+
+         @include breakpoint(1440px){
+            display: flex;
+         }
+
+        a{
+         display: inline-block;
+         background: url('./../images/IG-normal.png');
+         background-repeat: no-repeat;
+         background-size: cover ;
+         @include adaptiv-value('width',60,35,0);
+         @include adaptiv-value('height',60,35,0);
+         transition: 0.2s;
+         @include adaptiv-value('margin-right',50,20,0);
+
+         &:hover{
+            background: url('./../images/IG-hovered.png');
+            background-repeat: no-repeat;
+            background-size: cover ;
+         }
+     
+        }
+      }
 }
 
