@@ -1,9 +1,13 @@
 import React, { FC, useEffect, useRef } from 'react';
 import logo from './../assets/images/logo.png';
 
-const Header: FC = () => {
+interface IHeader {
+  headerRef: any;
+}
+
+const Header: FC<IHeader> = ({ headerRef }) => {
   return (
-    <header className="header">
+    <header className="header" ref={headerRef}>
       <div className="header__row d-f ai-c jc-sb">
         <div className="header__left d-f ai-c">
           <p>

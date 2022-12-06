@@ -7,11 +7,14 @@ import { useEffect, useRef, useState } from 'react';
 const Home = () => {
   const [unityContainerHeight, setInityContainerHeight] = useState(0);
   const [unityContainerWidth, setInityContainerWidth] = useState(0);
+  const [headerHeight, setHeaderHeight] = useState(0);
   const unityContainerRef = useRef<any>(null);
+  const headerRef = useRef<any>(null);
   useEffect(() => {
-    if (unityContainerRef.current) {
+    if (unityContainerRef.current && headerRef.current) {
       setInityContainerHeight(unityContainerRef.current.clientHeight);
       setInityContainerWidth(unityContainerRef.current.clientWidth);
+      setHeaderHeight(headerRef.current.clientHeight);
     }
   }, [unityContainerRef]);
 
@@ -22,7 +25,7 @@ const Home = () => {
     codeUrl: '/Build/Builds.wasm',
     streamingAssetsUrl: 'StreamingAssets',
     companyName: 'DefaultCompany',
-    productName: 'Metamonopoly',
+    // productName: 'Metamonopoly',
     productVersion: '1.0',
   });
 
@@ -31,7 +34,7 @@ const Home = () => {
   return (
     <section className="home">
       <div className="home__row d-g">
-        <Header />
+        <Header headerRef={headerRef} />
 
         <div id="unity-container" className="unity-desktop" ref={unityContainerRef}>
           <Unity
@@ -39,7 +42,10 @@ const Home = () => {
             style={{
               background: '#1F1F20',
               width: `${unityContainerWidth}px`,
-              height: `${unityContainerHeight - 100}px`,
+              height: `${window.innerHeight - headerHeight}px`,
+              position: 'absolute',
+              left: '0',
+              bottom: '0',
             }}
           />
           <div id="unity-loading-bar">

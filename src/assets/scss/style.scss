@@ -269,10 +269,11 @@
    @include adaptiv-value('padding-top',60,30,0);
    @include adaptiv-value('padding-left',40,10,0);
    @include adaptiv-value('padding-right',40,10,0);
+   @include adaptiv-value('padding-bottom',60,30,0);
+
 
    @include breakpoint(1440px){
       border-bottom: 1px solid #4D5260;
-   @include adaptiv-value('padding-bottom',30,20,0);
    }
 
 
