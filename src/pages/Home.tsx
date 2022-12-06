@@ -39,7 +39,7 @@ const Home = () => {
             style={{
               background: '#1F1F20',
               width: `${unityContainerWidth}px`,
-              height: `${unityContainerHeight}px`,
+              height: `${unityContainerHeight - 100}px`,
             }}
           />
           <div id="unity-loading-bar">
